@@ -78,7 +78,7 @@ ALLOWED_EXTENSIONS = {'.jpeg', '.raw', '.jpg', '.bmp', '.dng', '.heic', '.arw', 
 os.makedirs(photodir, exist_ok=True)
 register_heif_opener()
 
-# Palltte only for WaveShare 7.5inch Spectra-E6 e-Paper
+# Palette only for WaveShare 13.3inch Spectra-E6 e-Paper
 palette = [
     (0, 0, 0),
     (255, 255, 255),
@@ -166,7 +166,7 @@ def depalette_image(pixels, palette):
     indices[indices > 3] += 1  # Simulate the code from the C
     return indices
 
-def scale_img_in_memory(image, target_width=800, target_height=480, bg_color=(255, 255, 255)):
+def scale_img_in_memory(image, target_width=1600, target_height=1200, bg_color=(255, 255, 255)):
     """
     Process image in memory, return BytesIO object
 

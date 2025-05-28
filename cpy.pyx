@@ -11,8 +11,8 @@ from PIL import Image
 from libc.stdint cimport uint16_t, uint32_t
 
 # Constants
-EPD_W = 800
-EPD_H = 480
+EPD_W = 1600
+EPD_H = 1200
 
 ctypedef np.float32_t FLOAT_TYPE
 ctypedef np.uint8_t UINT8_TYPE
