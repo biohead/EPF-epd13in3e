@@ -166,7 +166,7 @@ def depalette_image(pixels, palette):
     indices[indices > 3] += 1  # Simulate the code from the C
     return indices
 
-def scale_img_in_memory(image, target_width=1600, target_height=1200, bg_color=(255, 255, 255)):
+def scale_img_in_memory(image, target_width=1200, target_height=1600, bg_color=(255, 255, 255)):
     """
     Process image in memory, return BytesIO object
 
