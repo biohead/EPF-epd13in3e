@@ -1,7 +1,7 @@
 #include <Arduino.h>
 #include <SPI.h>
 #include <HTTPClient.h>
-#include "epd7in3e.h"
+#include "EPD_13in3e.h"
 #include "FS.h"
 #include <ArduinoJson.h>
 // #include "SimpleWiFiManager.h"
