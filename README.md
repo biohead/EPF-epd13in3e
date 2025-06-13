@@ -1,6 +1,8 @@
-# E-paper ESP32 Frame
+# E-paper ESP32 Frame for Waveshare 13.3" Spectra 6 screen
 
 - **This project is currently a Work in Progress (WIP)!**
+
+This requires an ESP32 with PSRAM due to the size of the images for the larger screen.
 
 This project leverages **Immich** as a service for organizing albums and photos. Photos intended for display are grouped into specific albums, and a FLASK server hosted on a NAS or cloud server handles image cropping and editing before sending them to the ESP32. Since the ESP32 remains in deep sleep most of the time, and all image processing is handled by the server, the EPD updates photos very quickly, typically within 15 seconds. This significantly reduces power consumption.
 
@@ -24,8 +26,8 @@ Mostly modifieded from TRMNL WiFiCaptive[https://github.com/usetrmnl/firmware/tr
 
 ## Components
 
-- [FireBeetle 2 ESP32-C6](https://www.dfrobot.com/product-2771.html)
-- [7.3-inch E Ink Spectra 6 (E6) Full Color E-Paper Display Module + HAT](https://www.waveshare.com/7.3inch-e-paper-hat-e.htm)
+- [Olimex ESP32-S3 DevKit LiPo](https://www.olimex.com/Products/IoT/ESP32-S3/ESP32-S3-DevKit-Lipo/open-source-hardware)
+- [13.3-inch E Ink Spectra 6 (E6) Full Color E-Paper Display Module + HAT](https://www.waveshare.com/13.3inch-e-paper-hat-plus-e.htm)
 - Picture frame: A standard picture frame that accommodates the e-paper frame.
 - Li-Po battery with PH2.0 header
 - Simple button for wake and setting
@@ -35,17 +37,17 @@ Mostly modifieded from TRMNL WiFiCaptive[https://github.com/usetrmnl/firmware/tr
 ### Clone the Repository
 
 ```bash
-$ git clone https://github.com/jwchen119/epf.git
+$ git clone https://github.com/biohead/epf-epd13in3e.git
 ```
 
 ### Manually Build Docker Image
 
 ```bash
-$ git clone https://github.com/jwchen119/epf.git
-$ docker build -t jwchen119/epf .
+$ git clone https://github.com/biohead/epf-epd13in3e.git
+$ docker build -t biohead/epf-epd13in3e .
 ```
 
-### Download Precompiled Docker Image
+### Download Precompiled Docker Image ***NOT AVAILABLE for 13.3"***
 
 If you prefer not to build the image yourself, you can download the precompiled image from [DockerHub](https://hub.docker.com/r/jwchen119/epf):
 
@@ -80,15 +82,15 @@ immich:
 ```
 </details>
 
-### ESP32-C6
+### ESP32-S3
 
-Connect the EPD, ESP32-C6, Li-Po battery, and setting button according to the correct wiring configuration. 
+Connect the EPD, ESP32-S3, Li-Po battery, and setting button according to the correct wiring configuration. 
 To run the code follow the following steps:
 
 1. Install and set up Arduino IDE
-2. Connect your ESP32-C6
-3. Rename the Arduino folder from the repo to `epd7in3e`
-4. Open the `epd7in3e.ino` file
+2. Connect your ESP32-S3
+3. Rename the Arduino folder from the repo to `epd13in3e`
+4. Open the `epd13in3e.ino` file
 5. Install following libraries from Arduino library manager:
   5-1. Arduinojson
   5-2. Async TCP
